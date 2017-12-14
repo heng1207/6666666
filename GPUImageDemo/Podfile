@@ -1,0 +1,7 @@
+
+
+
+target 'GPUImageDemo' do
+pod 'GPUImage'
+end
+
