@@ -9,6 +9,8 @@
 #import "BeautifyVC.h"
 #import "GPUImage.h"
 #import "GPUImageBeautifyFilter.h"
+
+
 #import <AssetsLibrary/ALAssetsLibrary.h> //iOS8以下的版本
 #import <Photos/Photos.h> //iOS8以上的版本
 
@@ -57,46 +59,10 @@
         [beautifyFilter removeTarget:_movieWriter];
         [_movieWriter finishRecording];
         
-//        [self saveVideo:pathToMovie];
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(pathToMovie))
-        {
-            
-            //(NSString *)filePath: 视频的文件路径
-            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                
-                [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL fileURLWithPath:pathToMovie]];
-                
-            } completionHandler:^(BOOL success, NSError *error) {
-                if (success==YES) {
-                    
-                }
-                else{
-                    
-                }
-                
-            }];
-            
-            
-//            [library writeVideoAtPathToSavedPhotosAlbum:movieURL completionBlock:^(NSURL *assetURL, NSError *error)
-//             {
-//                 dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                     if (error) {
-//                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存失败" message:nil
-//                                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                         [alert show];
-//                     } else {
-//                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存成功" message:nil
-//                                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                         [alert show];
-//                     }
-//                 });
-//             }];
-        }
-        else {
-            NSLog(@"error mssg)");
-        }
+        [self newSaveVideo:pathToMovie];
+        
+//        [self saveVideo1:pathToMovie AndMovieURL:movieURL];
+//        [self saveVideo2:pathToMovie];
         
     });
 
@@ -104,15 +70,73 @@
     // Do any additional setup after loading the view.
 }
 
-//iOS 新的保存视频方法
--(void)saveVideo:(NSString*)videoPath {
+#define mark  iOS8以后
+-(void)newSaveVideo:(NSString*)videoPath {
+    //(NSString *)filePath: 视频的文件路径
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        
+        [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:[NSURL fileURLWithPath:videoPath]];
+        
+    } completionHandler:^(BOOL success, NSError *error) {
+        if (success) {
+             NSLog(@"保存视频成功");
+        }
+        else{
+            NSLog(@"保存视频失败%@", error);
+            
+        }
+        
+    }];
+    
+    
+}
+
+
+
+
+#define   ios8以前，方法1
+-(void)saveVideo1:(NSString *)pathToMovie AndMovieURL:(NSURL *)movieURL{
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(pathToMovie))
+    {
+        
+        [library writeVideoAtPathToSavedPhotosAlbum:movieURL completionBlock:^(NSURL *assetURL, NSError *error)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 
+                 if (error) {
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存失败" message:nil
+                                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                     [alert show];
+                 } else {
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存成功" message:nil
+                                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                     [alert show];
+                 }
+             });
+         }];
+    }
+    else {
+        NSLog(@"error mssg)");
+    }
+    
+
+    
+    
+}
+
+
+
+
+
+#define   ios8以前，方法2
+-(void)saveVideo2:(NSString*)videoPath {
     if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(videoPath)) {
         //保存相册核心代码
         UISaveVideoAtPathToSavedPhotosAlbum(videoPath, self, @selector(savedPhotoImage:didFinishSavingWithError:contextInfo:), nil);
     }
     
 }
-
 
 //保存视频完成之后的回调
 - (void) savedPhotoImage:(UIImage*)image didFinishSavingWithError: (NSError *)error contextInfo: (void *)contextInfo {

@@ -6,9 +6,12 @@
 //  Copyright © 2017年 恒. All rights reserved.
 //
 
+
+   //用视频做视频水印
 #import "WatermarkVideoVC.h"
 #import "GPUImage.h"
 #import <AssetsLibrary/ALAssetsLibrary.h>
+
 
 
 @interface WatermarkVideoVC ()
@@ -38,7 +41,10 @@
     [(GPUImageDissolveBlendFilter *)filter setMix:0.5];
     
     // 播放
-    NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
+//    NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
+    NSString *path =[[NSBundle mainBundle]pathForResource:@"abc" ofType:@"mp4"];
+    NSURL *sampleURL = [NSURL URLWithString:path];
+
     movieFile = [[GPUImageMovie alloc] initWithURL:sampleURL];
     movieFile.runBenchmark = YES;
     movieFile.playAtActualSpeed = YES;
@@ -78,7 +84,7 @@
     
     [videoCamera startCameraCapture];
     [movieWriter startRecording];
-    [movieFile startProcessing];
+    [movieFile startProcessing]; //此处报错
     
     CADisplayLink* dlink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateProgress)];
     [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];

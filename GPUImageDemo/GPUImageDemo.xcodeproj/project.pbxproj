@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		58AB913FBB9393129E5015E7 /* libPods-GPUImageDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6875CCA30EB288EBBB643CE /* libPods-GPUImageDemo.a */; };
+		B023E46B1FF0DEAF0000A07D /* abc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B023E46A1FF0DEAF0000A07D /* abc.mp4 */; };
+		B023E46E1FF0DF6E0000A07D /* qwe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B023E46C1FF0DF6E0000A07D /* qwe.mp4 */; };
+		B023E46F1FF0DF6E0000A07D /* abc2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B023E46D1FF0DF6E0000A07D /* abc2.mp4 */; };
 		B02446F11FDFC0A5005BD28C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B02446F01FDFC0A5005BD28C /* AppDelegate.m */; };
 		B02446F91FDFC0A5005BD28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02446F81FDFC0A5005BD28C /* Assets.xcassets */; };
 		B02446FC1FDFC0A5005BD28C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02446FA1FDFC0A5005BD28C /* LaunchScreen.storyboard */; };
@@ -20,7 +23,7 @@
 		B02447161FDFCB48005BD28C /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B02447151FDFCB48005BD28C /* GPUImageBeautifyFilter.m */; };
 		B02447191FDFCC09005BD28C /* FuzzyPictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B02447181FDFCC09005BD28C /* FuzzyPictureVC.m */; };
 		B024471C1FDFCCBD005BD28C /* FilterVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B024471B1FDFCCBD005BD28C /* FilterVideo.m */; };
-		B024471F1FDFCDA7005BD28C /* WatermarkVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.m */; };
+		B024471F1FDFCDA7005BD28C /* WatermarkVideoVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.mm */; };
 		B02447231FDFCEFB005BD28C /* WatermarkTextPictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B02447221FDFCEFB005BD28C /* WatermarkTextPictureVC.m */; };
 		B024472E1FDFCFFA005BD28C /* THImageMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = B02447291FDFCFF9005BD28C /* THImageMovie.m */; };
 		B024472F1FDFCFFA005BD28C /* THImageMovieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B024472B1FDFCFF9005BD28C /* THImageMovieManager.m */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		1310BDC67E51AEA6AE775C1A /* Pods-GPUImageDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImageDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImageDemo/Pods-GPUImageDemo.release.xcconfig"; sourceTree = "<group>"; };
 		73BC2FDE970E7A969A29406A /* Pods-GPUImageDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImageDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImageDemo/Pods-GPUImageDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B023E46A1FF0DEAF0000A07D /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
+		B023E46C1FF0DF6E0000A07D /* qwe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = qwe.mp4; sourceTree = "<group>"; };
+		B023E46D1FF0DF6E0000A07D /* abc2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc2.mp4; sourceTree = "<group>"; };
 		B02446EC1FDFC0A5005BD28C /* GPUImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02446EF1FDFC0A5005BD28C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B02446F01FDFC0A5005BD28C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,12 +60,9 @@
 		B024471A1FDFCCBD005BD28C /* FilterVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterVideo.h; sourceTree = "<group>"; };
 		B024471B1FDFCCBD005BD28C /* FilterVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterVideo.m; sourceTree = "<group>"; };
 		B024471D1FDFCDA7005BD28C /* WatermarkVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatermarkVideoVC.h; sourceTree = "<group>"; };
-		B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatermarkVideoVC.m; sourceTree = "<group>"; };
-		B02447201FDFCE58005BD28C /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
+		B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WatermarkVideoVC.mm; sourceTree = "<group>"; };
 		B02447211FDFCEFB005BD28C /* WatermarkTextPictureVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatermarkTextPictureVC.h; sourceTree = "<group>"; };
 		B02447221FDFCEFB005BD28C /* WatermarkTextPictureVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatermarkTextPictureVC.m; sourceTree = "<group>"; };
-		B02447241FDFCF2D005BD28C /* abc2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc2.mp4; sourceTree = "<group>"; };
-		B02447261FDFCFCB005BD28C /* qwe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = qwe.mp4; sourceTree = "<group>"; };
 		B02447281FDFCFF9005BD28C /* THImageMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THImageMovie.h; sourceTree = "<group>"; };
 		B02447291FDFCFF9005BD28C /* THImageMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THImageMovie.m; sourceTree = "<group>"; };
 		B024472A1FDFCFF9005BD28C /* THImageMovieManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THImageMovieManager.h; sourceTree = "<group>"; };
@@ -115,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				B02447131FDFCB48005BD28C /* 3rdParty */,
-				B02447201FDFCE58005BD28C /* abc.mp4 */,
-				B02447261FDFCFCB005BD28C /* qwe.mp4 */,
-				B02447241FDFCF2D005BD28C /* abc2.mp4 */,
+				B023E46A1FF0DEAF0000A07D /* abc.mp4 */,
+				B023E46D1FF0DF6E0000A07D /* abc2.mp4 */,
+				B023E46C1FF0DF6E0000A07D /* qwe.mp4 */,
 				B02446EF1FDFC0A5005BD28C /* AppDelegate.h */,
 				B02446F01FDFC0A5005BD28C /* AppDelegate.m */,
 				B02447071FDFC20A005BD28C /* RootViewController.h */,
@@ -133,7 +136,7 @@
 				B024471A1FDFCCBD005BD28C /* FilterVideo.h */,
 				B024471B1FDFCCBD005BD28C /* FilterVideo.m */,
 				B024471D1FDFCDA7005BD28C /* WatermarkVideoVC.h */,
-				B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.m */,
+				B024471E1FDFCDA7005BD28C /* WatermarkVideoVC.mm */,
 				B02447211FDFCEFB005BD28C /* WatermarkTextPictureVC.h */,
 				B02447221FDFCEFB005BD28C /* WatermarkTextPictureVC.m */,
 				B02447311FDFD03D005BD28C /* VideoMergeVC.h */,
@@ -238,9 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B023E46B1FF0DEAF0000A07D /* abc.mp4 in Resources */,
+				B023E46F1FF0DF6E0000A07D /* abc2.mp4 in Resources */,
 				B02446FC1FDFC0A5005BD28C /* LaunchScreen.storyboard in Resources */,
 				B02446F91FDFC0A5005BD28C /* Assets.xcassets in Resources */,
 				B02447061FDFC148005BD28C /* Podfile in Resources */,
+				B023E46E1FF0DF6E0000A07D /* qwe.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +329,7 @@
 				B024472E1FDFCFFA005BD28C /* THImageMovie.m in Sources */,
 				B02447091FDFC20A005BD28C /* RootViewController.m in Sources */,
 				B02447121FDFCAF5005BD28C /* BeautifyVC.m in Sources */,
-				B024471F1FDFCDA7005BD28C /* WatermarkVideoVC.m in Sources */,
+				B024471F1FDFCDA7005BD28C /* WatermarkVideoVC.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +460,19 @@
 				DEVELOPMENT_TEAM = 22XG2PMWVV;
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"GPUImage\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-56.GPUImageDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,6 +488,19 @@
 				DEVELOPMENT_TEAM = 22XG2PMWVV;
 				INFOPLIST_FILE = GPUImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"GPUImage\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-56.GPUImageDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

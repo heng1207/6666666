@@ -159,7 +159,7 @@
     }
     if(self.url == nil)
     {
-      [self processAsset];
+      [self processAsset];//
       return;
     }
     

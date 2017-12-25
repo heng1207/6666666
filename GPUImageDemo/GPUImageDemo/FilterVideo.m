@@ -133,6 +133,7 @@
     }
 }
 
+//改变亮度值
 - (void)updateSliderValue:(id)sender
 {
     [(GPUImageSepiaFilter *)_filter setIntensity:[(UISlider *)sender value]];
