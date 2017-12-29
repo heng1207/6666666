@@ -32,12 +32,29 @@
 }
 
 - (void)onCustom {
+    
+    //方法一：
     GPUImageFilter *filter = [[GPUImageSepiaFilter alloc] init];
     UIImage *image = [UIImage imageNamed:@"face"];
     if (image) {
 //        self.mImageView.image = image;
         self.mImageView.image = [filter imageByFilteringImage:image];
     }
+    
+    
+    //方法二：
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:image];
+    GPUImageSepiaFilter *stillImageFilter = [[GPUImageSepiaFilter alloc] init];
+
+    [stillImageSource addTarget:stillImageFilter];
+    [stillImageFilter useNextFrameForImageCapture];
+    [stillImageSource processImage];
+
+    UIImage *currentFilteredVideoFrame = [stillImageFilter imageFromCurrentFramebuffer];
+    self.mImageView.image = currentFilteredVideoFrame;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

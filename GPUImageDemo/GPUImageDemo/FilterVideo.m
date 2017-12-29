@@ -23,7 +23,7 @@
 @property (nonatomic , assign) long     mLabelTime;
 @property (nonatomic , strong) NSTimer  *mTimer;
 
-@property (nonatomic , strong) CADisplayLink *mDisplayLink;
+@property (nonatomic , strong) CADisplayLink *mDisplayLink;//定时器
 
 
 
@@ -71,7 +71,7 @@
 }
 
 - (void)displaylink:(CADisplayLink *)displaylink {
-    NSLog(@"test");
+    NSLog(@"test---%@",displaylink);
 }
 
 

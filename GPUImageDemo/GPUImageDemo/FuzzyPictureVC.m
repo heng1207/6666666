@@ -21,10 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //用GPUImagePicture处理源图像，用GPUImageTiltShiftFilter处理模糊效果，用GPUImageView显示。
     GPUImageView *primaryView = [[GPUImageView alloc] initWithFrame:self.view.frame];
     self.view = primaryView;
+    
     UIImage *inputImage = [UIImage imageNamed:@"face.png"];
     _sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage];
+    
     _sepiaFilter = [[GPUImageTiltShiftFilter alloc] init];
     _sepiaFilter.blurRadiusInPixels = 40.0;
     [_sepiaFilter forceProcessingAtSize:primaryView.sizeInPixels];
@@ -37,7 +40,7 @@
     GLint size = [GPUImageContext maximumTextureSizeForThisDevice];
     GLint unit = [GPUImageContext maximumTextureUnitsForThisDevice];
     GLint vector = [GPUImageContext maximumVaryingVectorsForThisDevice];
-    NSLog(@"%d %d %d", size, unit, vector);
+    NSLog(@"%d *******%d ------- %d", size, unit, vector);
     
     // Do any additional setup after loading the view.
 }
@@ -49,6 +52,7 @@
     NSLog(@"Processing");
     [_sepiaFilter setTopFocusLevel:rate - 0.1];
     [_sepiaFilter setBottomFocusLevel:rate + 0.1];
+
     [_sourcePicture processImage];
 }
 

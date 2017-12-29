@@ -16,7 +16,10 @@
 #import "WatermarkVideoVC.h"
 #import "WatermarkTextPictureVC.h"
 #import "VideoMergeVC.h"
-
+#import "PictureInOutVC.h"
+#import "GPUImageInstructVC.h"
+//#import "FaceRecognitionVC.h"
+#import "SobelCheckVC.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,copy)NSArray *dataArr;
@@ -86,6 +89,22 @@
     else if (indexPath.row==7){
         VideoMergeVC *vc=[VideoMergeVC new];
        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else if (indexPath.row==8){
+        PictureInOutVC *vc=[PictureInOutVC new];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else if (indexPath.row==9){
+        GPUImageInstructVC *vc=[GPUImageInstructVC new];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else if (indexPath.row==10){
+//        FaceRecognitionVC *vc=[FaceRecognitionVC new];
+//        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else if (indexPath.row==11){
+        SobelCheckVC *vc=[SobelCheckVC new];
+        [self presentViewController:vc animated:YES completion:nil];
     }
     
 }

@@ -6,6 +6,13 @@
 //  Copyright © 2017年 恒. All rights reserved.
 //
 
+/*
+ 视频合并混音
+ 
+ */
+
+
+
 #import "VideoMergeVC.h"
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import "GPUImage.h"
@@ -33,6 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     GPUImageView *filterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
     self.view = filterView;
     
@@ -41,7 +50,8 @@
     [self.view addSubview:self.mLabel];
     
     filter = [[GPUImageDissolveBlendFilter alloc] init];
-    [(GPUImageDissolveBlendFilter *)filter setMix:0.5];
+    [(GPUImageDissolveBlendFilter *)filter setMix:0.5]; //设置两个视频之间的混合程度
+    
     
     // 播放
     NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];

@@ -11,7 +11,7 @@
 
 
 @interface VideoProcessingVC ()
-@property (nonatomic , strong) GPUImageView *mGPUImageView;
+@property (nonatomic , strong) GPUImageView *mGPUImageView;//显示GPUImage输出
 @property (nonatomic , strong) GPUImageVideoCamera *mGPUVideoCamera;
 @end
 
@@ -27,6 +27,7 @@
     kGPUImageFillModePreserveAspectRatio,           // Maintains the aspect ratio of the source image, adding bars of the specified background color
     kGPUImageFillModePreserveAspectRatioAndFill     // Maintains the aspect ratio of the source image, zooming in on its center to fill the view
     */
+    
     self.mGPUImageView.fillMode = kGPUImageFillModeStretch;//图像的填充模式kGPUImageFillModePreserveAspectRatioAndFill;
     self.mGPUImageView = [[GPUImageView alloc] initWithFrame:self.view.frame];
     self.mGPUImageView.center = self.view.center;
@@ -35,8 +36,9 @@
     
     GPUImageSepiaFilter* filter = [[GPUImageSepiaFilter alloc] init];
     [self.mGPUVideoCamera addTarget:filter];
-    [filter addTarget:self.mGPUImageView];
+    [filter addTarget:self.mGPUImageView];//添加一个目标新帧可用时接收通知。它的下一个可用的目标将被要求纹理。
     
+    //这行代码不能添加
 //    [self.mGPUVideoCamera addTarget:self.mGPUImageView];
     
     [self.mGPUVideoCamera startCameraCapture];

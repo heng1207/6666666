@@ -39,10 +39,10 @@
     filter = [[GPUImageDissolveBlendFilter alloc] init];
     [(GPUImageDissolveBlendFilter *)filter setMix:0.5];
     
+    
     // 播放
     NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"abc2" withExtension:@"mp4"];
     AVAsset *asset = [AVAsset assetWithURL:sampleURL];
-    CGSize size = self.view.bounds.size;
     movieFile = [[GPUImageMovie alloc] initWithAsset:asset];
     movieFile.runBenchmark = YES;
     movieFile.playAtActualSpeed = YES;
@@ -55,13 +55,17 @@
     [label sizeToFit];
     UIImage *image = [UIImage imageNamed:@"watermark.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    CGSize size = self.view.bounds.size;
     UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     subView.backgroundColor = [UIColor clearColor];
     imageView.center = CGPointMake(subView.bounds.size.width / 2, subView.bounds.size.height / 2);
     [subView addSubview:imageView];
     [subView addSubview:label];
     
-    GPUImageUIElement *uielement = [[GPUImageUIElement alloc] initWithView:subView];
+    
+    
+    //把UIView对象转换成纹理对象，进入响应链
+    GPUImageUIElement *uielement = [[GPUImageUIElement alloc] initWithView:subView];//
     
     //    GPUImageTransformFilter 动画的filter
     NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Movie.m4v"];
@@ -90,16 +94,21 @@
     [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [dlink setPaused:NO];
     
-    __weak typeof(self) weakSelf = self;
-    
+    //当GPUImageFilter渲染完纹理后，会调用frameProcessingCompletionBlock回调。
     [progressFilter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
-        CGRect frame = imageView.frame;
-        frame.origin.x += 1;
-        frame.origin.y += 1;
-        imageView.frame = frame;
+        
+        //UI应该放在主线程里面，修改图片位置
+        dispatch_async(dispatch_get_main_queue(), ^{
+            CGRect frame = imageView.frame;
+            frame.origin.x += 1;
+            frame.origin.y += 1;
+            imageView.frame = frame;
+        });
         [uielement updateWithTimestamp:time];
     }];
     
+    
+     __weak typeof(self) weakSelf = self;
     [movieWriter setCompletionBlock:^{
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf->filter removeTarget:strongSelf->movieWriter];

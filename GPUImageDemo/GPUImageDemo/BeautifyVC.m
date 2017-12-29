@@ -13,6 +13,7 @@
 
 #import <AssetsLibrary/ALAssetsLibrary.h> //iOS8以下的版本
 #import <Photos/Photos.h> //iOS8以上的版本
+//http://blog.csdn.net/u014128241/article/details/53333435 <Photos/Photos.h>保存图片或者视频介绍
 
 
 @interface BeautifyVC ()
@@ -20,10 +21,8 @@
 @property (nonatomic , strong) UILabel  *mLabel;
 
 @property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
-@property (nonatomic , strong) GPUImageMovieWriter *movieWriter;
+@property (nonatomic , strong) GPUImageMovieWriter *movieWriter;//用来记录保存视频
 @property (nonatomic, strong) GPUImageView *filterView;
-
-//http://blog.csdn.net/u014128241/article/details/53333435
 
 @end
 
@@ -31,24 +30,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
     self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
+    
     self.filterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
     self.filterView.center = self.view.center;
     [self.view addSubview:self.filterView];
     
     
     NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Movie.m4v"];
-    unlink([pathToMovie UTF8String]);
+    unlink([pathToMovie UTF8String]);//删除已存在文件
     NSURL *movieURL = [NSURL fileURLWithPath:pathToMovie];
     
     _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:movieURL size:CGSizeMake(640.0, 480.0)];
     
-    self.videoCamera.audioEncodingTarget = _movieWriter;
+    self.videoCamera.audioEncodingTarget = _movieWriter;//_moveWriter处理音频流
     _movieWriter.encodingLiveVideo = YES;
     [self.videoCamera startCameraCapture];
+    
+    
     GPUImageBeautifyFilter *beautifyFilter = [[GPUImageBeautifyFilter alloc] init];
     [self.videoCamera addTarget:beautifyFilter];
     [beautifyFilter addTarget:self.filterView];
