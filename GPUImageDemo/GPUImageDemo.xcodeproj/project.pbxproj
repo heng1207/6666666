@@ -33,6 +33,7 @@
 		B05F2F401FF0EBF600FC8E70 /* FaceRecognitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B05F2F3F1FF0EBF600FC8E70 /* FaceRecognitionVC.m */; };
 		B05F2F461FF0EC5300FC8E70 /* SobelCheckVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B05F2F451FF0EC5300FC8E70 /* SobelCheckVC.m */; };
 		B05F2F4A1FF0ED3400FC8E70 /* SimpleEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = B05F2F481FF0ED3400FC8E70 /* SimpleEditor.m */; };
+		B0A4552620107E0F0046F51A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A4552420107E0F0046F51A /* BaseNavigationController.m */; };
 		B0E498B51FF4C3F90088E643 /* abc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B0E498B41FF4C3F80088E643 /* abc.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		B05F2F7E1FF0F13C00FC8E70 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B05F2F7F1FF0F14700FC8E70 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B05F2F811FF0F15300FC8E70 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B0A4552420107E0F0046F51A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		B0A4552520107E0F0046F51A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		B0E498B41FF4C3F80088E643 /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
 		D6875CCA30EB288EBBB643CE /* libPods-GPUImageDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPUImageDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +145,8 @@
 				B023E46C1FF0DF6E0000A07D /* qwe.mp4 */,
 				B02446EF1FDFC0A5005BD28C /* AppDelegate.h */,
 				B02446F01FDFC0A5005BD28C /* AppDelegate.m */,
+				B0A4552520107E0F0046F51A /* BaseNavigationController.h */,
+				B0A4552420107E0F0046F51A /* BaseNavigationController.m */,
 				B02447071FDFC20A005BD28C /* RootViewController.h */,
 				B02447081FDFC20A005BD28C /* RootViewController.m */,
 				B024470A1FDFC868005BD28C /* PictureProcessingVC.h */,
@@ -356,6 +361,7 @@
 				B02446FF1FDFC0A5005BD28C /* main.m in Sources */,
 				B02447331FDFD03D005BD28C /* VideoMergeVC.m in Sources */,
 				B024470F1FDFC9BC005BD28C /* VideoProcessingVC.m in Sources */,
+				B0A4552620107E0F0046F51A /* BaseNavigationController.m in Sources */,
 				B02446F11FDFC0A5005BD28C /* AppDelegate.m in Sources */,
 				B02447301FDFCFFA005BD28C /* THImageMovieWriter.m in Sources */,
 				B05F2F4A1FF0ED3400FC8E70 /* SimpleEditor.m in Sources */,

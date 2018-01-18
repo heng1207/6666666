@@ -60,51 +60,51 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
         PictureProcessingVC *vc=[PictureProcessingVC new];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==1){
         VideoProcessingVC *vc=[VideoProcessingVC new];
-   [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==2){
         BeautifyVC *vc=[BeautifyVC new];
-    [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==3){
         FuzzyPictureVC *vc=[FuzzyPictureVC new];
-       [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==4){
         FilterVideo *vc=[FilterVideo new];
-         [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==5){
         WatermarkVideoVC *vc=[WatermarkVideoVC new];
-    [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==6){
         WatermarkTextPictureVC *vc=[WatermarkTextPictureVC new];
-     [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==7){
         VideoMergeVC *vc=[VideoMergeVC new];
-       [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==8){
         PictureInOutVC *vc=[PictureInOutVC new];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==9){
         GPUImageInstructVC *vc=[GPUImageInstructVC new];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==10){
 //        FaceRecognitionVC *vc=[FaceRecognitionVC new];
-//        [self presentViewController:vc animated:YES completion:nil];
+//        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row==11){
         SobelCheckVC *vc=[SobelCheckVC new];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }
